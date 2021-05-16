@@ -27,6 +27,12 @@
             ".htaccess",
             "index.php",
             "web.config"
+        ],
+        "expose": [
+            "themes/mytheme/javascript",
+            "themes/mytheme/css",
+            "themes/mytheme/images",
+            "themes/mytheme/webfonts"
         ]
     },
     "config": {
