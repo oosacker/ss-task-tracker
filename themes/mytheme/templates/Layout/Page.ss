@@ -1,17 +1,11 @@
 <article>
-  
   <h1>$Title</h1>
-
 	<% if $CurrentMember %>
-		<h3>Welcome back, $CurrentMember.FirstName</h3>
+		<h5>Welcome back, $CurrentMember.FirstName</h5>
+		$Content
+		<a href=$LogoutURL>Log out</a>
 	<% else %>
-		Please <a href="/admin">login</a> to continue
+		Please login to continue...
+		$LoginForm
 	<% end_if %>
-
-	<div class="container">
-    $Content
-  </div>
-
 </article>
-
-$Form
