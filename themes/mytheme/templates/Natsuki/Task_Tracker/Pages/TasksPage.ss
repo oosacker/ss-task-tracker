@@ -1,5 +1,0 @@
-$LoginForm
-
-Tasks page
-
-$test()
