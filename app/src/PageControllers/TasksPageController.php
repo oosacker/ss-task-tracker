@@ -6,7 +6,8 @@ use PageController;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\View\ArrayData;
-use SilverStripe\Security\Authenticator;
+use SilverStripe\Security\Security;
+use Natsuki\Task_Tracker\Models\Task;
 
 class TasksPageController extends PageController 
 {
@@ -14,4 +15,18 @@ class TasksPageController extends PageController
   {
       return [];
   }
+
+  public function getUserTasks() 
+  {
+    if( $member = Security::getCurrentUser() ) {
+
+      $allTasks = Task::get()->filter(['UserID' => $member->ID]);
+
+      return $allTasks;
+    } 
+    else {
+        user_error('Not logged in');
+    }
+  }
+
 }
