@@ -1,0 +1,69 @@
+  public function updateform() 
+  { 
+      $textField = TextareaField::create('Text', 'Text*:')
+          ->setAttribute('placeholder','Enter new text here')
+          ->addExtraClass('mb-1');
+
+      $dateTimeField = DatetimeField::create('Date', 'Date*:')
+        ->setAttribute('placeholder','Enter new date here')
+        ->addExtraClass('mb-1');
+
+      $reminderField = CheckboxField::create('Reminder', 'Reminder*:')
+        ->setAttribute('placeholder','Reminder')
+        ->addExtraClass('mb-1');
+
+      $submitBtn = FormAction::create('doSubmit', 'Submit')
+          ->addExtraClass('mr-1');
+
+      // $resetBtn = FormAction::create('Reset')
+      //     ->setAttribute('type', 'reset')
+      //     ->addExtraClass('mr-1');
+
+      $fieldGroup = FieldGroup::create(
+          $textField,
+          $dateTimeField,
+          $reminderField,
+      )->addExtraClass('border rounded p-4 mb-1');
+
+      $fields = new FieldList( 
+          $fieldGroup
+      );
+
+      $actions = new FieldList( 
+          $submitBtn,
+          //$resetBtn
+      ); 
+
+      //$validator = RequiredFields::create('Name', 'Email', 'Message');
+
+      $updateForm = Form::create($this, __FUNCTION__, $fields, $actions);
+
+      // $contactForm->enableSpamProtection([
+      //     'mapping' => [
+      //         'Name' => 'authorName',
+      //         'Email' => 'authorMail',
+      //         'Message' => 'body'
+      //     ]
+      // ]);
+
+      return $updateForm; 
+  }
+
+  public function doSubmit($data, Form $form)
+  {
+    //var_dump($data);  
+    //die();
+
+    $remind = isset($data['Reminder']) ? true : false;
+
+    //$str = 'Here is your data \n';
+    echo 'Here is your data';
+    echo '<pre>';
+    var_dump($data);
+    echo '</pre>';
+
+    //$form->sessionMessage($str,'success');
+
+    //return $this->redirectBack();
+    //return $str;
+  }

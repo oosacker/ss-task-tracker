@@ -3,4 +3,5 @@ Name: apiroutes
 ---
 SilverStripe\Control\Director:
   rules:
-    'api/task/$ID/$Action': 'Natsuki\Task_Tracker\Controllers\TaskController'
+    'api/task/$ID//$Action': 'Natsuki\Task_Tracker\Controllers\TaskController'
+    'tasks//$Action': 'Natsuki\Task_Tracker\Pages\TasksPageController'
