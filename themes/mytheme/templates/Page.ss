@@ -16,6 +16,10 @@
 			integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
 			crossorigin="anonymous"
 		>
+		<link 
+			rel="stylesheet" 
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		>
 	</head>
 
 	<body 
@@ -28,6 +32,7 @@
 	<div class="main container mt-3" role="main">
 		$Layout
 	</div>
+
 
 	<%-- <% include Footer %> --%>
 
